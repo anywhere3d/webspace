@@ -294,12 +294,36 @@
 
 <script>
 
+    $.ajaxSetup({
+        cache: true
+    });
+
+    var jsFolder = "/js/";
+    var scriptsFolder = "/scripts/";
+    var componentsFolder = "/components/";
+
     THREE.Cache.enabled = true;
     THREE.Texture.DEFAULT_IMAGE = "https://i.imgur.com/8eycYxu.png";
+
     localPlayer.holder.visible = false;
     $(joystickControlsSelector).css("display", "none")
 
 </script>
-    
+
+<script>
+
+//  action-controls.html
+    var actionHolderSelector = "#actions-holder";
+    var actionControlsSelector = "#action-controls";
+    var actionControlsComponent = componentsFolder + "action-controls.html";
+
+    $(actionControlsSelector).one("click", function(){
+        $(actionHolderSelector).load(actionControlsComponent, function(resoponse, status, xhr){
+            debugMode && console.log("action-controls:", status);
+        });
+    });
+
+</script>
+
 </body>
 </html>
