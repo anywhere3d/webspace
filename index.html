@@ -195,6 +195,57 @@
 </section>
 
 
+<script>
+
+//  ServiceWorker.js
+
+    if ("serviceWorker" in navigator) {
+
+        navigator.serviceWorker.register("service-worker.js", {scope: ""})
+        .then( function( registration ) {
+
+            console.log( "Service worker registration:", registration );
+
+            if ( registration.installing ) {
+                console.log("Service worker installing...");
+            } else if ( registration.waiting ) {
+                console.log("Service worker installed.");
+            } else if ( registration.active ) {
+                console.log("Service worker is active.");
+            }
+
+        //  Registration was successful. Now, check to see whether the service worker is controlling the page.
+            if (!!navigator.serviceWorker.controller) {
+
+            //  If .controller is set, then this page is being actively controlled by the service worker.
+                console.log( "This page is being actively controlled by the service worker\n", 
+                    navigator.serviceWorker.controller.scriptURL);
+
+            } else {
+
+            //  If .controller isn't set, then prompt the user to reload the page so that the service 
+            //  worker can take control. Until that happens, the service worker's fetch handler won't be used.
+                console.warn( "Please reload this page to allow the service worker to handle network operations." );
+            }
+
+        }).catch( function(err) {
+
+        //  Something went wrong during registration. 
+        //  The service-worker.js file might be unavailable or contain a syntax error.
+            console.error( "Service Worker Error:", err );
+
+        });
+
+    } else {
+
+        //  The current browser doesn't support service workers.
+            console.warn( "Service workers are not supported in the current browser.",
+            "Read:", "http://www.chromium.org/blink/serviceworker/service-worker-faq");
+    }
+
+</script>
+
+
 
 
 
