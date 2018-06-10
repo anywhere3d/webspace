@@ -30,6 +30,9 @@
     <script src="/js/jquery.lazy.plugins.js"></script>
     <script>
         debugMode = true;
+        $.ajaxSetup({
+            cache: true
+        });
     </script>
 </head>
 
@@ -292,10 +295,6 @@
 <script src="/js/runtime.js"></script>
 
 <script>
-
-    $.ajaxSetup({
-        cache: true
-    });
 
     var jsFolder = "/js/";
     var scriptsFolder = "/scripts/";
