@@ -24,7 +24,7 @@ var iconsUrls = [
 ];
 
 
-this.addEventListener("install", function(event) {
+self.addEventListener("install", function(event) {
     event.waitUntil(
 
         caches.open( CURRENT_CACHES.imgCache ).then(function(cache) {
