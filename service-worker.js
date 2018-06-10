@@ -24,6 +24,16 @@ var iconUrls = [
     "https://i.imgur.com/fRhLFmC.png",
 ];
 
+var skyboxUrls = [
+//  space4 skybox.
+    "https://i.imgur.com/v6bjQLb.jpg", // "posx.jpg",
+    "https://i.imgur.com/lwrlr6P.jpg", // "negx.jpg", 
+    "https://i.imgur.com/kKUKBJg.jpg", // "posy.jpg", 
+    "https://i.imgur.com/N0oZlJR.jpg", // "negy.jpg", 
+    "https://i.imgur.com/x9q8z0K.jpg", // "posz.jpg", 
+    "https://i.imgur.com/HYcK7Ii.jpg", // "negz.jpg"
+];
+
 var jsUrls = [
     "/js/alerts.js",
     "/js/rawinflate.js",
