@@ -59,7 +59,8 @@
             <ul class="nav navbar-nav navbar-right pull-left">
                 
                 <li class="first"></li>
-
+                <li id="nav-item-home""><a class="menu-item" href="/avatar/editor">Avatar</a></li>
+                <li id="nav-item-home""><a class="menu-item" href="/outfit/editor">Outfit</a></li>
                 <li id="nav-item-over" style="display:none;"><a class="first menu-item">Overview</a></li>
                 <li id="nav-item-home" style="display:none;"><a class="menu-item">Home</a></li>
                 <li id="nav-item-dash" style="display:none;"><a class="menu-item">Dashboard</a></li>
@@ -168,8 +169,8 @@
 
             <div id="menu-holder">
                 <h4>Menu:</h4>
-                <li id="avatar-editor" class="editor-helpers"><a>Avatar Editor</a></li>
-                <li id="outfit-editor" class="editor-helpers"><a>Outfit Editor</a></li>
+                <li id="avatar-editor" class="editor-helpers"><a href="/avatar/editor">Avatar Editor</a></li>
+                <li id="outfit-editor" class="editor-helpers"><a href="/outfit/editor">Outfit Editor</a></li>
                 <li id="scene-editor" class="editor-helpers"><a>Scene Editor</a></li>
                 <li id="animator-editor" class="editor-helpers"><a>Animator</a></li>
             </div>
@@ -247,6 +248,8 @@
 */
 </script>
 
+<script src="/js/localforage.js"></script>
+
 <script async src="/js/alerts.js"></script>
 <script async src="/js/rawinflate.js"></script>
 <script async src="/js/rawdeflate.js"></script>
@@ -259,8 +262,6 @@
 <script async src="/js/spectrum.js"></script>
 <script async src="/js/watermark.js"></script>
 <script async src="/js/sharer.js"></script>
-
-<script src="/js/localforage.js"></script>
 
 <script src="/three/three.js"></script>
 <script src="/three/EditorControls.js"></script>
