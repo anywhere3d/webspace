@@ -4,6 +4,7 @@ var CACHE_VERSION = "0.0.1";
 
 var jsFolder = "/js/";
 var cssFolder = "/css/";
+var threeFolder = "/three/";
 var scriptsFolder = "/scripts/";
 var componentsFolder = "/components/";
 var imgurFolder = "https://i.imgur.com/";
@@ -16,21 +17,49 @@ var CURRENT_CACHES = {
     componentsCache: "components-v" + CACHE_VERSION,
 };
 
-var iconsUrls = [
+var iconUrls = [
     "https://i.imgur.com/VdHDWKu.png",
     "https://i.imgur.com/o0BUWGy.png",
     "https://i.imgur.com/f0EOMiH.png",
     "https://i.imgur.com/fRhLFmC.png",
 ];
 
+var jsUrls = [
+    "/js/alerts.js",
+    "/js/rawinflate.js",
+    "/js/rawdeflate.js",
+    "/js/bootbox.min.js",
+    "/js/bootstrap.min.js",
+    "/js/validator.min.js",
+    "/js/DeviceDetector.js",
+    "/js/MathDecimalAdjustment.js",
+    "/js/html2canvas.js",
+    "/js/spectrum.js",
+    "/js/watermark.js",
+    "/js/sharer.js",
+    "/js/localforage.js",
+    "/three/three.js",
+    "/three/EditorControls.js",
+    "/three/FirstPersonControls.js",
+    "/three/Detector.js",
+    "/three/Projector.js",
+    "/three/Animation.js",
+    "/three/AnimationHandler.js",
+    "/three/KeyFrameAnimation.js",
+    "/three/BVHImport.js",
+    "/three/SceneLoader.js",
+];
 
 self.addEventListener("install", function(event) {
     event.waitUntil(
 
         caches.open( CURRENT_CACHES.imgCache ).then(function(cache) {
-            return cache.addAll( iconsUrls );
-        })
-
+            return cache.addAll( iconUrls );
+        }),
+        caches.open( CURRENT_CACHES.jsCache ).then(function(cache) {
+            return cache.addAll( jsUrls );
+        }),
+ 
     );
 });
 
