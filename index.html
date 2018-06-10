@@ -210,11 +210,11 @@
             console.log( "Service worker registration:", registration );
 
             if ( registration.installing ) {
-                console.log("Service worker installing...");
+                debugMode && console.log("Service worker installing...");
             } else if ( registration.waiting ) {
-                console.log("Service worker installed.");
+                debugMode && console.log("Service worker installed.");
             } else if ( registration.active ) {
-                console.log("Service worker is active.");
+                debugMode && console.log("Service worker is active.");
             }
 
         //  Registration was successful. Now, check to see whether the service worker is controlling the page.
